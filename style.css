@@ -1,0 +1,46 @@
+.image {
+width: 18vw;
+height: 18vw;
+padding-left: 3vw;
+padding-right: 3vw;
+padding-bottom: 3vw;
+
+}
+
+.image:hover {
+transform: translateY(-15px)
+}
+h1 {
+    font-family: 'Faster One', cursive;
+    font-size: 3.4vw;
+    text-align: center;
+    padding-top: 1.3vw;
+    padding-bottom: 1vw;
+}
+
+h3 {
+    font-family: 'Special Elite', cursive;
+    font-size: 2vw;
+    text-align: center;
+    
+}
+
+body {
+    width: 100%;
+    background-color:rgb(255, 217, 0)
+}
+
+.result{
+    font-family: 'Special Elite', cursive;
+    font-size: 2vw;
+    text-align: center;
+    padding: 1.3vw;
+    
+}
+
+#image-container {
+    display:flex;
+    justify-content: center; /* align horizontal */
+    
+  
+}
