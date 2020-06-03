@@ -9,50 +9,27 @@ function humanPlay() { //valja kad se testira. console log vrati kliknut paper i
      return(event.target.id)
 }
 
-document.getElementById('Rock').addEventListener('click', game) 
-document.getElementById('Paper').addEventListener('click', game)
-document.getElementById('Scissors').addEventListener('click', game)
+document.getElementById('Rock').addEventListener('click', playRound) 
+document.getElementById('Paper').addEventListener('click', playRound)
+document.getElementById('Scissors').addEventListener('click', playRound)
+
+ let playerScore =0;
+ let computerScore= 0;
+ let countRound= 1;
 
 
 function game() {
-  let playerScore =0;
-  let computerScore= 0;
-  let countRound= 1;
  
+}
   
   function playRound(playerSelection, computerSelection) {
       computerSelection = computerPlay();
       playerSelection = humanPlay();
-    
-    let log = document.getElementById("log");
- let score = document.createElement("p");
-    let counter = document.createTextNode( `Player ${playerScore} : ${computerScore}  Computer`);
-    score.appendChild(counter);
-    
-    
-let playerPara = document.createElement("p");
-let compPara = document.createElement("p");
-let node = document.createTextNode(`You chose ${playerSelection}`);
-let compChoice = document.createTextNode(`Computer chose ${computerSelection}`);
-playerPara.appendChild(node);
-compPara.appendChild(compChoice)
-;
 
-  
-log.appendChild(playerPara);
-log.appendChild(compPara);
-log.appendChild(score); 
-   
     if (computerSelection==playerSelection) {
-     
-      let tie = document.createElement("p")
-      let tieText = document.createTextNode("It's a tie!");
-      tie.appendChild(tieText);
-      
-      log.appendChild(tie);
-      
-       playerScore++;
+      playerScore++;
        computerScore++;
+      document.getElementById("logs").innerText = `Computer chose ${computerSelection}. Player chose ${playerSelection}. It's a tie!`;
        
    }
      else if(playerSelection=="Paper" && computerSelection=="Rock" ||
@@ -60,11 +37,8 @@ log.appendChild(score);
               playerSelection=="Scissors" && computerSelection=="Paper") {
       playerScore++;
        
-       let playerWin = document.createElement("p");
-       let playerWinText = document.createTextNode("Player wins!" + playerSelection + " beats " + computerSelection +".");
-       playerWin.appendChild(playerWinText);
+      document.getElementById("logs").innerText = `Computer chose ${computerSelection}. Player chose ${playerSelection}. Player wins!`;
        
-       log.appendChild(playerWin);
        
 
     }
@@ -72,19 +46,11 @@ log.appendChild(score);
      else if(computerSelection=="Scissors" && playerSelection=="Paper" ||
              computerSelection=="Rock" && playerSelection=="Scissors" ||
               computerSelection =="Paper" && playerSelection=="Rock") {
-     computerScore++
-       
-       let computerWin = document.createElement("p");
-       let computerWinText = document.createTextNode ("Player loses! " + computerSelection + " beats " + playerSelection + ".");
-       computerWin.appendChild(computerWinText);
-       
-       log.appendChild(computerWin);
+     computerScore++;
+           document.getElementById("logs").innerText = `Computer chose ${computerSelection}. Player chose ${playerSelection}. Computer wins!`;
          
      }
-     
+     document.getElementById("counter").innerText = `Player ${playerScore} : ${computerScore} Computer`
   }
   
-
-playRound();
-  }
-
+  
