@@ -27,9 +27,10 @@ function game() {
       playerSelection = humanPlay();
 
     if (computerSelection==playerSelection) {
-      playerScore++;
-       computerScore++;
-      document.getElementById("logs").innerText = `Computer chose ${computerSelection}. Player chose ${playerSelection}. It's a tie!`;
+ 
+      document.getElementById("logs").innerText = `Computer chose ${computerSelection}. 
+Player chose ${playerSelection}. 
+It's a tie!`;
        
    }
      else if(playerSelection=="Paper" && computerSelection=="Rock" ||
@@ -37,20 +38,36 @@ function game() {
               playerSelection=="Scissors" && computerSelection=="Paper") {
       playerScore++;
        
-      document.getElementById("logs").innerText = `Computer chose ${computerSelection}. Player chose ${playerSelection}. Player wins!`;
-       
-       
-
+      document.getElementById("logs").innerText = `Computer chose ${computerSelection}. 
+Player chose ${playerSelection}. 
+Player wins!`;
+         
     }
                 
      else if(computerSelection=="Scissors" && playerSelection=="Paper" ||
              computerSelection=="Rock" && playerSelection=="Scissors" ||
               computerSelection =="Paper" && playerSelection=="Rock") {
      computerScore++;
-           document.getElementById("logs").innerText = `Computer chose ${computerSelection}. Player chose ${playerSelection}. Computer wins!`;
+           document.getElementById("logs").innerText = `Computer chose ${computerSelection}. 
+Player chose ${playerSelection}. 
+Computer wins!`;
          
-     }
-     document.getElementById("counter").innerText = `Player ${playerScore} : ${computerScore} Computer`
+     };
+     document.getElementById("counter").innerText = `Player ${playerScore} : ${computerScore} Computer`;
+  
+ if(playerScore==5 || computerScore==5) {
+
+  if (computerScore>playerScore) { 
+    document.getElementById("logs").innerText= "GAME OVER.Machines rule";
+  }
+  else if (playerScore>computerScore){
+    document.getElementById("logs").innerText="GAME OVER. HUMANS ARE SUPERIOR";
+  }
+    else {
+   document.getElementById("logs").innerText="GAME OVER. HUMAN EQUAL MACHINE?"
+    }
+ }
   }
   
+
   
