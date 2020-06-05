@@ -84,27 +84,17 @@ btnNo.innerHTML = "NO";
 logs.appendChild(btnNo);
    
    btnYes.addEventListener('click', function restart(){playerScore=0; computerScore=0; logs.innerHTML = ""; playRound()});
-   btnNo.addEventListener ('click', quitGame);
+   btnNo.addEventListener ('click', function quitGame(){
+     document.getElementById("logs").innerText="No more game.";
+     document.getElementbyId("rockLink").setAttribute("href", "https://www.google.com");
 
+   })
  
   }}
 
+
+  
   
 
-  function quitGame() {
-    document.getElementById("logs").innerText="No more game.";
-     
-    document.getElementById("Rock").onclick = function() {
-      window.location.href = 'https://www.nationalgeographic.com/science/earth/inside-the-earth/rocks/';
-    };
-    document.getElementById("Paper").onclick= function(){
-        window.location.href= 'https://interestingengineering.com/the-long-and-complex-history-of-paper';
-    
-      }   ;
-    document.getElementById("Scissors").onclick= function () {
-        window.location.href= 'https://www.vampiretools.com/blog/short-history-scissors/';
-  };
-   
-  }
   
 
