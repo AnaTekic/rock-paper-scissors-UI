@@ -1,6 +1,14 @@
+html, body {
+    margin: 0;
+padding:0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
 .image {
-width: 18vw;
-height: 18vw;
+width: 14vw;
+height: 14vw;
 padding-left: 3vw;
 padding-right: 3vw;
 padding-bottom: 3vw;
@@ -12,7 +20,7 @@ transform: translateY(-15px)
 }
 h1 {
     font-family: 'Faster One', cursive;
-    font-size: 3.4vw;
+    font-size: 2.2em;
     text-align: center;
     padding-top: 1.3vw;
     padding-bottom: 1vw;
@@ -20,7 +28,7 @@ h1 {
 
 h3 {
     font-family: 'Special Elite', cursive;
-    font-size: 2vw;
+    font-size: 1.45em;
     text-align: center;
     
 }
@@ -32,7 +40,7 @@ body {
 
 .result{
     font-family: 'Special Elite', cursive;
-    font-size: 2vw;
+    font-size: 1.34em;
     text-align: center;
     padding: 1.3vw;
     
@@ -42,5 +50,27 @@ body {
     display:flex;
     justify-content: center; /* align horizontal */
     
-  
+
+
+    
 }
+button {
+    display:inline-block;
+padding:0.45em 0.88em;
+border:0.16em solid rgb(3, 1, 1);
+margin:0.4em 0.3em 0.3em 0.4em;
+border-radius:0.55em;
+box-sizing: border-box;
+text-decoration:none;
+font-family:'Special Elite', cursive;
+font-weight:300;
+font-size: 0.85em;
+color:rgb(8, 5, 5);
+text-align:center;
+transition: all 0.2s;
+}
+button:hover{
+background-color:rgb(206, 205, 205);
+
+}
+

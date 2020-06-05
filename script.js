@@ -74,13 +74,15 @@ Computer wins!`;
     
  function playAgain() {
      document.getElementById("logs").innerText= "Play again?";
-   
-     var btnYes = document.createElement("BUTTON");   
-btnYes.innerHTML = "YES";                  
+ 
+     var btnYes = document.createElement("BUTTON");
+     btnYes.innerHTML = "YES";
+             
 logs.appendChild(btnYes);  
      
      var btnNo = document.createElement("BUTTON");   
-btnNo.innerHTML = "NO";                  
+  
+     btnNo.innerHTML = "NO";                  
 logs.appendChild(btnNo);
    
    btnYes.addEventListener('click', function restart(){playerScore=0; computerScore=0; logs.innerHTML = ""; playRound()});
